@@ -36,7 +36,8 @@ object CSVReader {
         val deptDF = spark.createDataFrame(spark.sparkContext.parallelize(studentData), StructType(studentSchema))
         deptDF.printSchema()
         
-        
+    
+        deptDF.write.format("com.databricks.spark.csv").save("src/main/scala/outputCSV/myFile.csv")
         spark.stop()
         
     }
