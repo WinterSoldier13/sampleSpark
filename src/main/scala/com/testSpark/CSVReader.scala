@@ -18,7 +18,10 @@ object CSVReader {
             .option("header", "true")
             .csv("src/main/scala/resources/sample.csv")
         df.printSchema()
-    
+        
+        
+        
+//    Writing a CSV file
         val studentData = Seq(
             Row("Ayush", "Singh", 20, "Electrical"),
             Row("Pinaki", "Sen", 21, "Electrical"),
@@ -26,6 +29,7 @@ object CSVReader {
             Row("Harshit", "Jain", 20, "Computer-Science"),
             Row("Aditya", "Tiwari", 21, "Computer-Science")
         )
+        
         val studentSchema = List(
             StructField("fname", StringType, nullable = false),
             StructField("lname", StringType, nullable = false),
