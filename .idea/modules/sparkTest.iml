@@ -13,6 +13,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: antlr:antlr:2.7.7:jar" level="project" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.101tec:zkclient:0.3:jar" level="project" />
     <orderEntry type="library" name="sbt: com.carrotsearch:hppc:0.7.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.chuusai:shapeless_2.11:2.3.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.clearspring.analytics:stream:2.7.0:jar" level="project" />
@@ -40,6 +41,7 @@
     <orderEntry type="library" name="sbt: com.twitter:parquet-hadoop-bundle:1.6.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.univocity:univocity-parsers:2.7.3:jar" level="project" />
     <orderEntry type="library" name="sbt: com.vlkan:flatbuffers:1.2.0-3f79e055:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.yammer.metrics:metrics-core:2.2.0:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-beanutils:commons-beanutils:1.7.0:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-cli:commons-cli:1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.10:jar" level="project" />
@@ -77,6 +79,7 @@
     <orderEntry type="library" name="sbt: log4j:apache-log4j-extras:1.2.17:jar" level="project" />
     <orderEntry type="library" name="sbt: log4j:log4j:1.2.17:jar" level="project" />
     <orderEntry type="library" name="sbt: net.hydromatic:eigenbase-properties:1.1.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.jpountz.lz4:lz4:1.2.0:jar" level="project" />
     <orderEntry type="library" name="sbt: net.razorvine:pyrolite:4.13:jar" level="project" />
     <orderEntry type="library" name="sbt: net.sf.opencsv:opencsv:2.3:jar" level="project" />
     <orderEntry type="library" name="sbt: net.sf.py4j:py4j:0.10.7:jar" level="project" />
@@ -123,6 +126,8 @@
     <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpclient:4.5.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpcore:4.4.10:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.ivy:ivy:2.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.kafka:kafka-clients:0.8.2.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.kafka:kafka_2.11:0.8.2.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.orc:orc-core:1.5.5:nohive:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.orc:orc-mapreduce:1.5.5:nohive:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.orc:orc-shims:1.5.5:jar" level="project" />
@@ -144,6 +149,7 @@
     <orderEntry type="library" name="sbt: org.apache.spark:spark-network-shuffle_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-sketch_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-sql_2.11:2.4.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.spark:spark-streaming-kafka_2.11:1.6.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-streaming_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-tags_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-unsafe_2.11:2.4.5:jar" level="project" />
