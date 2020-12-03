@@ -24,9 +24,15 @@ object prog1 {
         var df = loadData(path_)
         //        Normalize the cols
         df = normalizeTheData(df)
+        // Print the data
         printData(df)
         
+        
+        
+        // Create a model
+        
         //        Then train the model
+        
         //        Save the trained model to the disk
         
         spark.close()

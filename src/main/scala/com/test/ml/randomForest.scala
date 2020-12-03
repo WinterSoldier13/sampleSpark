@@ -16,10 +16,13 @@ object randomForest
         .appName("CSVReader")
         .master("local[*]")
         .getOrCreate()
-    
+    spark.sparkContext.setLogLevel("OFF")
     def randomForestClass() : Unit ={
         val data = spark.read.format("libsvm").load("src/main/scala/resources/test.txt")
         data.printSchema()
+        
+        println("<><><><>PRINTING<><><><><")
+        data.show(10)
         
         val labelIndexer = new StringIndexer()
             .setInputCol("label")

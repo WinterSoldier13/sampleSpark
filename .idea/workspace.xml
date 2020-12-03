@@ -23,7 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f722636-f343-4ca1-ba20-dd4219b8373f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/sampleapp/prog1/prog1.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/sampleapp/prog1/prog1.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/test/ml/randomForest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/test/ml/randomForest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607004830188</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sync">
+      <created>1607006922411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607006922411</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,10 +155,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="443" y="117" width="1024" height="841" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1606642736185" />
-    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2" timestamp="1607004832602">
+    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2" timestamp="1607006924265">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1607004832602" />
+    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1607006924265" />
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1607005117710">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
