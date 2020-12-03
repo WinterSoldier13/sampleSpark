@@ -147,11 +147,11 @@
     <orderEntry type="library" name="sbt: org.apache.spark:spark-network-common_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-network-shuffle_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-sketch_2.11:2.4.5:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-sql_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-streaming-kafka_2.11:1.6.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-streaming_2.11:2.4.5:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.spark:spark-tags_2.11:2.4.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.spark:spark-tags_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.spark:spark-unsafe_2.11:2.4.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.thrift:libfb303:0.9.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.thrift:libthrift:0.9.3:jar" level="project" />
