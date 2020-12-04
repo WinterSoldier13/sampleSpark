@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607027953955</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added working model">
+      <created>1607031343711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607031343711</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,7 +157,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added dataCleaning" />
     <MESSAGE value="sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="sync" />
+    <MESSAGE value="added working model" />
+    <option name="LAST_COMMIT_MESSAGE" value="added working model" />
   </component>
   <component name="WindowStateProjectService">
     <state x="443" y="117" width="1024" height="841" key="#Project_Structure" timestamp="1607005504350">
@@ -169,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="443" y="117" width="1024" height="841" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1606642736185" />
-    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2" timestamp="1607027959339">
+    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2" timestamp="1607031346184">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1607027959339" />
+    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1607031346184" />
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1607005117710">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -44,55 +44,43 @@ object prog1 {
         
     }
     
-    def getTheModel(df: sql.DataFrame): PipelineModel = {
-        
-        val cols: Array[String] = df.columns
-        //    TODO seperate labels and features
-        val genderIndexer = new StringIndexer().setInputCol("gender").setOutputCol("genderIndex").fit(df)
-        val raceIndexer = new StringIndexer().setInputCol("race").setOutputCol("raceIndex").fit(df)
-        val lunchIndexer = new StringIndexer().setInputCol("lunch").setOutputCol("lunchIndex").fit(df)
-        val mathIndexer = new StringIndexer().setInputCol("math").setOutputCol("mathIndex").fit(df)
-        val readingIndexer = new StringIndexer().setInputCol("reading").setOutputCol("readingIndex").fit(df)
-        val writingIndexer = new StringIndexer().setInputCol("writing").setOutputCol("writingIndex").fit(df)
-        
-        val genderEncoder = new OneHotEncoder().setInputCol("genderIndex").setOutputCol("genderVec")
-        val raceEncoder = new OneHotEncoder().setInputCol("raceIndex").setOutputCol("raceVec")
-        val lunchEncoder = new OneHotEncoder().setInputCol("lunchIndex").setOutputCol("lunchVec")
-        val mathEncoder = new OneHotEncoder().setInputCol("mathIndex").setOutputCol("mathVec")
-        val readingEncoder = new OneHotEncoder().setInputCol("readingIndex").setOutputCol("readingVec")
-        val writingEncoder = new OneHotEncoder().setInputCol("writingIndex").setOutputCol("writingVec")
-        
-        val assembler = new VectorAssembler()
-            .setInputCols(cols)
-            .setOutputCol("feature")
-        
-        val Array(trainingData, testData) = df.randomSplit(Array(0.8, 0.2))
-        
-        
-        val lr = new LogisticRegression().setLabelCol("")
-        val pipeline = new Pipeline().setStages(Array(genderIndexer, raceIndexer, lunchIndexer, mathIndexer, readingIndexer, writingIndexer, genderEncoder, raceEncoder, lunchEncoder, mathEncoder, readingEncoder, writingEncoder, assembler, lr))
-        val model = pipeline.fit(df)
-        
-        
-        model
-    }
-    
+//    def getTheModel(df: sql.DataFrame): PipelineModel = {
+//
+//        val cols: Array[String] = df.columns
+//
+//        val genderIndexer = new StringIndexer().setInputCol("gender").setOutputCol("genderIndex").fit(df)
+//        val raceIndexer = new StringIndexer().setInputCol("race").setOutputCol("raceIndex").fit(df)
+//        val lunchIndexer = new StringIndexer().setInputCol("lunch").setOutputCol("lunchIndex").fit(df)
+//        val mathIndexer = new StringIndexer().setInputCol("math").setOutputCol("mathIndex").fit(df)
+//        val readingIndexer = new StringIndexer().setInputCol("reading").setOutputCol("readingIndex").fit(df)
+//        val writingIndexer = new StringIndexer().setInputCol("writing").setOutputCol("writingIndex").fit(df)
+//
+//        val genderEncoder = new OneHotEncoder().setInputCol("genderIndex").setOutputCol("genderVec")
+//        val raceEncoder = new OneHotEncoder().setInputCol("raceIndex").setOutputCol("raceVec")
+//        val lunchEncoder = new OneHotEncoder().setInputCol("lunchIndex").setOutputCol("lunchVec")
+//        val mathEncoder = new OneHotEncoder().setInputCol("mathIndex").setOutputCol("mathVec")
+//        val readingEncoder = new OneHotEncoder().setInputCol("readingIndex").setOutputCol("readingVec")
+//        val writingEncoder = new OneHotEncoder().setInputCol("writingIndex").setOutputCol("writingVec")
+//
+//        val assembler = new VectorAssembler()
+//            .setInputCols(cols)
+//            .setOutputCol("feature")
+//
+//        val Array(trainingData, testData) = df.randomSplit(Array(0.8, 0.2))
+//
+//
+//        val lr = new LogisticRegression().setLabelCol("")
+//        val pipeline = new Pipeline().setStages(Array(genderIndexer, raceIndexer, lunchIndexer, mathIndexer, readingIndexer, writingIndexer, genderEncoder, raceEncoder, lunchEncoder, mathEncoder, readingEncoder, writingEncoder, assembler, lr))
+//        val model = pipeline.fit(df)
+//
+//
+//        model
+//    }
+//
     
     
     def generateModel(df : sql.DataFrame): Unit =
     {
-//        val Array(trainingData, testData) = df.randomSplit(Array(0.7, 0.3))
-//
-//        val randomForestModel = new RandomForestClassifier()
-//            .setLabelCol("labels")
-//            .setFeaturesCol("features")
-//            .setNumTrees(5)
-//
-//        val trainedModel = randomForestModel.fit(trainingData)
-//        val predictions = trainedModel.transform(testData)
-//
-//        predictions.show(10)
-    
         val labelIndexer = new StringIndexer()
             .setInputCol("label")
             .setOutputCol("indexedLabel")
@@ -122,6 +110,8 @@ object prog1 {
         val predictions = model.transform(testData)
     
         predictions.show()
+        
+        rf.save("src/main/static/models/out")
     }
     
     def loadData(path: String): sql.DataFrame = {
