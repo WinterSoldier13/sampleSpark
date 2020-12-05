@@ -4,10 +4,12 @@ import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{IndexToString, OneHotEncoder, OneHotEncoderEstimator, StringIndexer, VectorAssembler, VectorIndexer}
 import org.apache.spark.sql
-import org.apache.spark.sql.{SparkSession, functions}
+import org.apache.spark.sql.{Row, SparkSession, functions}
 import org.apache.spark.sql.functions.{array, col}
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.classification.{LogisticRegression, RandomForestClassifier}
+import org.apache.spark.sql.catalyst.ScalaReflection.Schema
+import org.apache.spark.sql.types.{StringType, StructField, StructType}
 
 
 object prog1 {
@@ -23,16 +25,18 @@ object prog1 {
         //        First load the data
         val path_ = "src/main/static/dataset/data.csv";
         var df = loadData(path_)
-        //        Normalize the cols
-//        df = normalizeTheData(df)
-        // Print the data
-        df = middleMan(df)
-        df = assembleData(df)
-        printData(df)
+        
+        
+//        TODO this vs that
+        df = testFunction(df)
+        
+//        df = middleMan(df)
+//        df = assembleData(df)
+//        printData(df)
         
         
         // Create a model
-//        val model = getTheModel(df)
+
         generateModel(df)
         
         //        Then train the model
@@ -78,14 +82,39 @@ object prog1 {
 //    }
 //
     
+    def testFunction(df : sql.DataFrame) :sql.DataFrame =
+    {
+//        var input_data = df.rdd.map(x => Row(x(0), //TODO ) )
+//        val schema = StructType( Array(
+//            StructField("labels", StringType),
+//            StructField("feature", StringType)
+//        ))
+//        var df2 = spark.createDataFrame(input_data, schema)
+//
+//        df2.show(10)
+//        df2
+        
+        var df2 = df.withColumn("gender", col("gender").cast("Float"))
+        df2 = df2.withColumn("math", (col("math")/100).cast("Float"))
+        df2 = df2.withColumn("reading", (col("reading")/100).cast("Float"))
+        df2 = df2.withColumn("writing", (col("writing")/100).cast("Float"))
+        df2 = df2.withColumn("lunch", col("lunch").cast("Float"))
     
+        var assembler = new VectorAssembler()
+                            .setInputCols(Array("gender","lunch","reading", "writing", "math"))
+                            .setOutputCol("features")
+        
+        var output = assembler.transform(df2)
+        output.select("label", "features").show()
+        output.select("label", "features")
+    }
     def generateModel(df : sql.DataFrame): Unit =
     {
         val labelIndexer = new StringIndexer()
             .setInputCol("label")
             .setOutputCol("indexedLabel")
             .fit(df)
-    
+
         val featureIndexer = new VectorIndexer()
             .setInputCol("features")
             .setOutputCol("indexedFeatures")
@@ -103,19 +132,40 @@ object prog1 {
             .setOutputCol("predictedLabel")
             .setLabels(labelIndexer.labels)
     
-        val pipeline = new Pipeline()
-            .setStages(Array(labelIndexer, featureIndexer, rf, labelConverter))
-    
-        val model = pipeline.fit(trainingData)
-        val predictions = model.transform(testData)
-    
-        predictions.show()
         
-        rf.save("src/main/static/models/out")
+//        TODO this vs that
+//        val pipeline = new Pipeline()
+//            .setStages(Array(labelIndexer, featureIndexer, rf, labelConverter))
+            
+//        Training without pipeline
+        var a = labelIndexer.transform(trainingData)
+        a = featureIndexer.transform(a)
+        val rmfModel = rf.fit(a)
+        
+        var pred_ = rmfModel.transform(a)
+        pred_ = labelConverter.transform(pred_)
+        
+        pred_.show()
+        rmfModel.write
+            .overwrite()
+            .save("src/main/static/models/out")
+        
+        
+        
+        
+//        val model = pipeline.fit(trainingData)
+//
+//        val predictions = model.transform(testData)
+//
+//        predictions.show()
+        
+//        rf.write
+//            .overwrite()
+//            .save("src/main/static/models/out")
     }
     
     def loadData(path: String): sql.DataFrame = {
-//        TODO change to df
+
         val data = spark
             .read
             .option("header", "true")
@@ -124,8 +174,13 @@ object prog1 {
         val df = (data.select(data("race").as("label"),
             $"gender", $"lunch", $"math",
             $"reading", $"writing"))
+        
+        println("Loaded Data ")
+        df.show(10)
         df
     }
+    
+
     
     def middleMan(df : sql.DataFrame) : sql.DataFrame =
         {
