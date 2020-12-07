@@ -1,9 +1,7 @@
 package com.sampleapp.prog2
 
-import org.apache.spark.ml.PipelineModel
-import org.apache.spark.ml.classification.{RandomForestClassificationModel, RandomForestClassifier}
+import org.apache.spark.ml.classification.{RandomForestClassificationModel}
 import org.apache.spark.ml.feature.{IndexToString, OneHotEncoderEstimator, StringIndexer, VectorAssembler, VectorIndexer}
-import org.apache.spark.mllib.tree.RandomForest
 import org.apache.spark.sql
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.col

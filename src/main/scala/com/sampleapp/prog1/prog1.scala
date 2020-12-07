@@ -8,8 +8,7 @@ import org.apache.spark.sql.{Row, SparkSession, functions}
 import org.apache.spark.sql.functions.{array, col}
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.classification.{LogisticRegression, RandomForestClassifier}
-import org.apache.spark.sql.catalyst.ScalaReflection.Schema
-import org.apache.spark.sql.types.{StringType, StructField, StructType}
+
 
 
 object prog1 {
