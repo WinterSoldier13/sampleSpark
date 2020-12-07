@@ -9,7 +9,7 @@ import org.apache.spark.sql.functions.col
 object prog2 {
     val spark: SparkSession = SparkSession
         .builder()
-        .appName("CSVReader")
+        .appName("prog2")
         .master("local[*]")
         .getOrCreate()
     

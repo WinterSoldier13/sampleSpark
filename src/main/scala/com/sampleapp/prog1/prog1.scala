@@ -14,7 +14,7 @@ import org.apache.spark.ml.classification.{LogisticRegression, RandomForestClass
 object prog1 {
     val spark: SparkSession = SparkSession
         .builder()
-        .appName("CSVReader")
+        .appName("prog1")
         .master("local[*]")
         .getOrCreate()
     
