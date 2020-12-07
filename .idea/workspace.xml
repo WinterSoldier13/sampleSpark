@@ -23,7 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f722636-f343-4ca1-ba20-dd4219b8373f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_bahir_spark_sql_streaming_mqtt_2_11_2_2_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_eclipse_paho_org_eclipse_paho_client_mqttv3_1_1_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/sparkTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/sparkTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/activeMQ/prog.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/activeMQ/prog.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/sampleapp/prog2/prog2.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/sampleapp/prog2/prog2.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/test/kafka/testKafka.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/test/kafka/testKafka.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +159,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607196249970</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="sync">
+      <created>1607333249743</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607333249744</updated>
+    </task>
+    <task id="LOCAL-00009" summary="sync">
+      <created>1607333376026</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607333376026</updated>
+    </task>
+    <task id="LOCAL-00010" summary="sync">
+      <created>1607333427881</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607333427881</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,10 +207,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="443" y="117" width="1024" height="841" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1607005504350" />
-    <state x="693" y="298" width="524" height="480" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1607195454825">
+    <state x="693" y="298" width="524" height="480" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1607333408399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="693" y="298" width="524" height="480" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1607195454825" />
+    <state x="693" y="298" width="524" height="480" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1607333408399" />
     <state x="738" y="295" width="424" height="480" key="FileChooserDialogImpl" timestamp="1606642679143">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -191,10 +219,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="443" y="117" width="1024" height="841" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1606642736185" />
-    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2" timestamp="1607196252260">
+    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2" timestamp="1607333429767">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1607196252260" />
+    <state x="555" y="263" width="800" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1607333429767" />
     <state x="624" y="248" key="run.anything.popup" timestamp="1607194692406">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

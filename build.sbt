@@ -16,3 +16,6 @@ libraryDependencies ++= Seq(
     "org.apache.spark" %% "spark-sql-kafka-0-10" % "2.4.5",
 )
 
+//Bahir
+libraryDependencies += "org.apache.bahir" %% "spark-sql-streaming-mqtt" % "2.2.0"
+

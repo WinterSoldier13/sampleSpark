@@ -93,6 +93,7 @@
     <orderEntry type="library" name="sbt: org.apache.avro:avro-ipc:1.8.2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.avro:avro-mapred:1.8.2:hadoop2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.avro:avro:1.8.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.bahir:spark-sql-streaming-mqtt_2.11:2.2.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.calcite:calcite-avatica:1.2.0-incubating:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.calcite:calcite-core:1.2.0-incubating:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.calcite:calcite-linq4j:1.2.0-incubating:jar" level="project" />
@@ -167,6 +168,7 @@
     <orderEntry type="library" name="sbt: org.datanucleus:datanucleus-api-jdo:3.2.6:jar" level="project" />
     <orderEntry type="library" name="sbt: org.datanucleus:datanucleus-core:3.2.10:jar" level="project" />
     <orderEntry type="library" name="sbt: org.datanucleus:datanucleus-rdbms:3.2.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.fusesource.leveldbjni:leveldbjni-all:1.8:jar" level="project" />
     <orderEntry type="library" name="sbt: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b34:jar" level="project" />
     <orderEntry type="library" name="sbt: org.glassfish.hk2.external:javax.inject:2.4.0-b34:jar" level="project" />

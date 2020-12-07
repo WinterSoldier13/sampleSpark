@@ -12,7 +12,7 @@ object testKafka
             .appName("testKafka")
             .master("local")
             .getOrCreate()
-        
+        spark.sparkContext.setLogLevel("OFF")
         import spark.implicits._
 
         val df = spark

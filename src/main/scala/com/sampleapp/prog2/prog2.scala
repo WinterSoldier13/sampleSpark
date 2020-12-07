@@ -75,13 +75,14 @@ object prog2 {
             .fit(df)
         
         val Array(trainingData, testData) = df.randomSplit(Array(0.7, 0.3))
+
         
         val labelConverter = new IndexToString()
             .setInputCol("prediction")
             .setOutputCol("predictedLabel")
             .setLabels(labelIndexer.labels)
         
-
+    
         
         var a = labelIndexer.transform(testData)
         a = featureIndexer.transform(a)
