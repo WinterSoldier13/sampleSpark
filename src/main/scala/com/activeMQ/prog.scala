@@ -10,7 +10,7 @@ object prog
         .master("local[*]")
         .getOrCreate()
     
-    spark.sparkContext.setLogLevel("OFF")
+//    spark.sparkContext.setLogLevel("OFF")
     import spark.implicits._
     
     def main(args : Array[String]): Unit =
@@ -19,7 +19,7 @@ object prog
             .readStream
             .format("org.apache.bahir.sql.streaming.mqtt.MQTTStreamSourceProvider")
             .option("brokerUrl","tcp://localhost:1883")
-            .option("topic","sample_topic2")
+            .option("topic","sample_topic")
             .load()
         
         df.printSchema()
