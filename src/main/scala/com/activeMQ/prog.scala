@@ -6,7 +6,7 @@ object prog
 {
     val spark: SparkSession = SparkSession
         .builder()
-        .appName("CSVReader")
+        .appName("sampleApp")
         .master("local[*]")
         .getOrCreate()
     
