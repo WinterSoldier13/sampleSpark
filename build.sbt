@@ -36,7 +36,7 @@ libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "2.7.2"
 libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.7.2"
 
 // for XML parsing
-libraryDependencies += "com.databricks" %% "spark-xml" % "0.5.0"
+libraryDependencies += "com.databricks" %% "spark-xml" % "0.11.0"
 dependencyOverrides += "com.google.guava" % "guava" % "15.0"
 
 //XML to JSON
