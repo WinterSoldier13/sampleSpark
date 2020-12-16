@@ -72,24 +72,29 @@ object sampleApp
         var xmlFile = XML.loadFile(path2XML_)
         
         //        todo THEN GET ALL THE POSSIBLE PATHS
-        var allPossiblePaths: ListBuffer[String] = getAllPaths.getAllPathAsList(xmlFile)
+        var allPossiblePaths: List[String] = getAllPaths.getAllPathAsList(xmlFile)
         
 //        todo Generate the queryString... I guess just appending will be enough
-        var queryString = ""
-        // Appending to the string
-        for( x <- allPossiblePaths)
-        {
-            queryString+= s", xpath(payload, '$x/text()') "
-        }
-        queryString = queryString.substring(2)
-        queryString = s"select $queryString from $tempTable_"
     
-        println(queryString)
+        val query_       = allPossiblePaths.map(x => s"xpath(payload, '$x/text()')").mkString(", ")
+        val queryString_ = s"select $query_ from $tempTable_"
+        println(queryString_)
+    
+        //        var queryString = ""
+        // Appending to the string
+//        for( x <- allPossiblePaths)
+//        {
+//            queryString+= s", xpath(payload, '$x/text()') "
+//        }
+//        queryString = queryString.substring(2)
+//        queryString = s"select $queryString from $tempTable_"
+    
+  
     
         // todo EXECUTE THE SQL QUERY
-        var alpha =  spark.sql(queryString)
-    
-        // todo PRINT THE VALUE TO THE CONSOLE
+        val alpha =  spark.sql(queryString_)
+//
+//        // todo PRINT THE VALUE TO THE CONSOLE
         alpha
             .writeStream
             .outputMode("append")

@@ -28,20 +28,19 @@ object getAllPaths {
         
     }
     
-    def getAllPathAsList(x: Elem): ListBuffer[String] = {
+    def getAllPathAsList(x: Elem): List[String] = {
         dfs(x, "")
         
         var allPossiblePaths: ListBuffer[String] = new ListBuffer[String]
         
         for (x <- map) {
             var temp = x._1
-//            println(x._1 + " |||| " + x._2)
+            //            println(x._1 + " |||| " + x._2)
             temp = temp.substring(0, temp.length - 9)
-            if(x._2.trim != "")
+            if (x._2.trim != "")
                 allPossiblePaths.append(temp)
         }
-        
-        allPossiblePaths
+        allPossiblePaths.toList
     }
     
     def dfs(n: Seq[Node], brc: String): Unit =
