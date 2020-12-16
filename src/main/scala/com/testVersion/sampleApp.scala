@@ -11,11 +11,11 @@ import scala.xml.XML
 /*
 todo HOW THIS WORKS?
 
--> Load a XML file from the Disc... Unfortunately this is required
--> Now I will infer it's path type... I mean the path from the rootNode to the leafNode
--> To generate all possible paths from the rootNode to a leafNode CONTAINING SOME VALUE I used Depth-First-Search
--> the DFS Algo can be found at  "com.xmlHelper.getAllPath"
--> Now after getting all the paths to all the leafNodes, I generated a SQL query (below described as queryString
+-> Load a XML file from the Disk... Unfortunately this is required step :(
+-> Now I will infer it's path type... I mean the path from the rootNode to the leafNode ... by node I mean XMLtag here
+-> To generate all possible paths from the rootNode to a leafNode CONTAINING SOME VALUE I used Depth-First-Search... considering the XML to be Directed-Acyclic Graph
+-> the DFS Algo that I wrote can be found at  "com.xmlHelper.getAllPath"
+-> Now after getting all the paths to all the leafNodes, I generated a SQL query (below described as queryString)
 -> Then I executed that query String on the table
 
 -> PROS:
