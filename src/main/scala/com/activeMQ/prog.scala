@@ -1,7 +1,7 @@
 package com.activeMQ
 
 
-import com.databricks.spark.xml.XmlDataFrameReader
+
 import com.xmlReader.xmlReader.spark
 import org.apache.avro.generic.GenericData.StringType
 import org.apache.spark.sql.functions.{col, from_json, schema_of_json, udf}

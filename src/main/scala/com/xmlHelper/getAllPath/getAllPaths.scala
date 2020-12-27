@@ -1,11 +1,13 @@
 package com.xmlHelper.getAllPath
 
 
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 import scala.xml._
 
 object getAllPaths {
-    var map: Map[String, String] = Map[String, String]()
+    val map: mutable.Map[String, String] = scala.collection.mutable.Map[String, String]()
+    val listBuffer: ListBuffer[String] = new ListBuffer[String]
     
     def main(args: Array[String]): Unit= {
     
@@ -23,7 +25,7 @@ object getAllPaths {
         
         for(x <- allPathList)
             {
-                println(x+"**")
+                println(x+"")
             }
         
     }
@@ -40,18 +42,30 @@ object getAllPaths {
             if (x._2.trim != "")
                 allPossiblePaths.append(temp)
         }
-        allPossiblePaths.toList
+        
+//        for(x <- listBuffer)
+//            {
+//                var temp = x
+//                temp = temp.substring(0, temp.length - 9)
+////                if (!listBuffer.contains(x))
+//                    allPossiblePaths.append(temp)
+//            }
+        
+        allPossiblePaths.toList.distinct
     }
     
     def dfs(n: Seq[Node], brc: String): Unit =
         n.foreach(x => {
             if (x.child.isEmpty) {
                 if (x.text == "") {
-                    map = map + (brc + x.label -> "")
+                    map.put(brc + x.label , "")
+                    listBuffer.append()
                     dfs(x.child, brc)
                 }
                 else {
-                    map = map + (brc + x.label + " " -> x.text)
+                    map.put(brc + x.label + " " , x.text)
+                    listBuffer.append(brc + x.label + " ")
+    
                     dfs(x.child, brc)
                 }
             }

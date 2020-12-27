@@ -36,11 +36,13 @@ libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "2.7.2"
 libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.7.2"
 
 // for XML parsing
-libraryDependencies += "com.databricks" %% "spark-xml" % "0.11.0"
-dependencyOverrides += "com.google.guava" % "guava" % "15.0"
+//libraryDependencies += "com.databricks" %% "spark-xml" % "0.11.0"
+//dependencyOverrides += "com.google.guava" % "guava" % "15.0"
 
 //XML to JSON
-libraryDependencies += "org.json" % "json" % "20201115"
+//libraryDependencies += "org.json" % "json" % "20201115"
+
+//libraryDependencies += "com.github.wnameless.json" % "json-flattener" % "0.11.1"
 
 //libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.6.7.1"
 //should be 2.6.5

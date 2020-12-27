@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.pubnub:pubnub-gson:4.21.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.pubnub/pubnub-gson/jars/pubnub-gson-4.21.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.pubnub/pubnub-gson/srcs/pubnub-gson-4.21.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

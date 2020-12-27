@@ -1,6 +1,18 @@
-
-    <PmtMethod>
+ <PmtMethod>
         <Mop>INTL</Mop>
         <MsgType>103</MsgType>
         <ProdCode>CTR</ProdCode>
-    </PmtMethod>
+        <Hello></Hello>
+ </PmtMethod>
+
+
+
+<!--
+{
+   "PmtMethod": {
+      "Mop": "INTL",
+      "MsgType": "103",
+      "ProdCode": "CTR"
+   }
+}
+-->

@@ -41,7 +41,7 @@ object sampleApp
         
         val brokerUrl_ : String = "tcp://localhost:1883"
         val topicName_ : String = "sample_topic"
-        val username_ : String  = "user"
+        val username_ : String  = "username"
         val password_ : String  = "password"
         val path2XML_ : String  = "src/main/static/dataset/smallXML.xml"
         val tempTable_ : String = "tempTable"
@@ -56,52 +56,59 @@ object sampleApp
             .option("brokerUrl", brokerUrl_)
             .option("topic", topicName_)
             .option("persistence", "memory")
-            .option("cleanSession", "true")
+            .option("cleanSession", "false")
             .option("username", username_)
             .option("password", password_)
+            .option("localStorage", "/home/wintersoldier/Desktop/tempS")
+            .option("clientId", "ayush")
             .load()
+    
+        df.printSchema()
+        val payload_ = df.select('payload cast "string", 'id cast "string")
         
-        val payload_ = df.select("payload")
-            .as[Array[Byte]]
-            .map(payload => { new String(payload) })
-            .toDF("payload")
-    
-        payload_.createOrReplaceTempView(tempTable_)
-    
-        //        TODO LOAD THE SAMPLE XML FILE from the MEMORY
-        var xmlFile = XML.loadFile(path2XML_)
         
-        //        todo THEN GET ALL THE POSSIBLE PATHS
-        var allPossiblePaths: List[String] = getAllPaths.getAllPathAsList(xmlFile)
-        
-//        todo Generate the queryString... I guess just appending will be enough
-    
-        val query_       = allPossiblePaths.map(x => s"xpath(payload, '$x/text()')").mkString(", ")
-        val queryString_ = s"select $query_ from $tempTable_"
-        println(queryString_)
-    
-        //        var queryString = ""
-        // Appending to the string
-//        for( x <- allPossiblePaths)
-//        {
-//            queryString+= s", xpath(payload, '$x/text()') "
-//        }
-//        queryString = queryString.substring(2)
-//        queryString = s"select $queryString from $tempTable_"
-    
-  
-    
-        // todo EXECUTE THE SQL QUERY
-        val alpha =  spark.sql(queryString_)
+//        val payload_ = df.select("payload")
+//            .as[Array[Byte]]
+//            .map(payload => { new String(payload) })
+//            .toDF("payload")
 //
-//        // todo PRINT THE VALUE TO THE CONSOLE
-        alpha
-            .writeStream
-            .outputMode("append")
-            .format("console")
-            .option("truncate", value = false)
-            .start
-            .awaitTermination()
+//        val temp__ = payload_.select("payload").collectAsList()
+//
+//
+//        payload_.createOrReplaceTempView(tempTable_)
+        
+        if(false) {
+            //        TODO LOAD THE SAMPLE XML FILE from the MEMORY
+            var xmlFile = XML.loadFile(path2XML_)
+    
+            //        todo THEN GET ALL THE POSSIBLE PATHS
+            var allPossiblePaths: List[String] = getAllPaths.getAllPathAsList(xmlFile)
+    
+            //        todo Generate the queryString... I guess just appending will be enough
+    
+            val query_ = allPossiblePaths.map(x => s"xpath(payload, '$x/text()')").mkString(", ")
+            val queryString_ = s"select $query_ from $tempTable_"
+            println(queryString_)
+        }
+        else {
+    
+//            val path_ = "$.PmtMethod.Mop"
+//            val queryString_ = s"select  get_json_object(payload, '$path_') from $tempTable_"
+//
+//
+//            // todo EXECUTE THE SQL QUERY
+//
+//            val alpha = spark.sql(queryString_)
+//            //
+//            //        // todo PRINT THE VALUE TO THE CONSOLE
+            payload_
+                .writeStream
+                .outputMode("append")
+                .format("console")
+                .option("truncate", value = false)
+                .start
+                .awaitTermination()
+        }
         
         spark.close()
         spark.stop()
