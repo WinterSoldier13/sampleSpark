@@ -74,90 +74,51 @@ object sampleApp
             .map(payload => { new String(payload) })
             .toDF("payload")
         
-        payload_.writeStream
-//            .format("console")
-//            .outputMode("append")
-            .foreachBatch((batchDF : DataFrame, batchID : Long) => {
-                val payloadSchemaXML = schema_of_xml(batchDF.select("payload").as[String])
-                payloadSchemaXML.printTreeString()
-                val parsed = batchDF.withColumn("parsed", from_xml(col("Payload"), payloadSchemaXML))
-//                parsed.show(true)
-                if(!parsed.isEmpty)
-                    {
-                        parsed.select("parsed")
-                            .write
-                            .format("parquet")
-                            .mode("overwrite")
-                            .save("/home/wintersoldier/Desktop/tempS")
-                        parsed.select("parsed").show(true)
-                        
-//                        val json = parsed.select("payload").toJSON
-//                        json.show()
-//
-//                        json.write
-//                            .format("json")
-//                            .mode("overwrite")
-//                            .save("/home/wintersoldier/Desktop/tempS")
-    
-    
-                    }
-            })
-            .start
-            .awaitTermination()
         
-//        val payloadSchemaXML = schema_of_xml(payload_.select("payload").as[String])
-//        val parsed = df.withColumn("parsed", from_xml($"payload", payloadSchemaXML))
-//
-//        parsed.writeStream
-//            .outputMode("append")
-//            .format("console")
-//            .option("truncate", value = false)
-//            .start
-//            .awaitTermination()
 
-//        payload_.createOrReplaceTempView(tempTable_)
+        payload_.createOrReplaceTempView(tempTable_)
+
+        if(true) {
+            //        TODO LOAD THE SAMPLE XML FILE from the MEMORY
+            var xmlFile = XML.loadFile(path2XML_)
+
+            //        todo THEN GET ALL THE POSSIBLE PATHS
+            var allPossiblePaths: List[String] = getAllPaths.getAllPathAsList(xmlFile)
+
+            //        todo Generate the queryString... I guess just appending will be enough
+
+            val query_ = allPossiblePaths.map(x => s"xpath(payload, '$x/text()')").mkString(", ")
+//            val queryString_ = s"select $query_ from $tempTable_"
+            val queryString_ = s"select xpath(payload, 'Entity/Field/text()') from $tempTable_"
+            val alpha = spark.sql(queryString_)
+
+            alpha
+                .writeStream
+                .outputMode("append")
+                .format("console")
+                .option("truncate", value = false)
+                .start
+                .awaitTermination()
+        }
+        else {
+
+//            val path_ = "$.PmtMethod.Mop"
+//            val queryString_ = s"select  get_json_object(payload, '$path_') from $tempTable_"
 //
-//        if(true) {
-//            //        TODO LOAD THE SAMPLE XML FILE from the MEMORY
-//            var xmlFile = XML.loadFile(path2XML_)
 //
-//            //        todo THEN GET ALL THE POSSIBLE PATHS
-//            var allPossiblePaths: List[String] = getAllPaths.getAllPathAsList(xmlFile)
+//            // todo EXECUTE THE SQL QUERY
 //
-//            //        todo Generate the queryString... I guess just appending will be enough
-//
-//            val query_ = allPossiblePaths.map(x => s"xpath(payload, '$x/text()')").mkString(", ")
-////            val queryString_ = s"select $query_ from $tempTable_"
-//            val queryString_ = s"select xpath(payload, 'Entity/Field[@id=4][@type=33783808]/text()') from $tempTable_"
 //            val alpha = spark.sql(queryString_)
-//
-//            alpha
-//                .writeStream
-//                .outputMode("append")
-//                .format("console")
-//                .option("truncate", value = false)
-//                .start
-//                .awaitTermination()
-//        }
-//        else {
-//
-////            val path_ = "$.PmtMethod.Mop"
-////            val queryString_ = s"select  get_json_object(payload, '$path_') from $tempTable_"
-////
-////
-////            // todo EXECUTE THE SQL QUERY
-////
-////            val alpha = spark.sql(queryString_)
-////            //
-////            //        // todo PRINT THE VALUE TO THE CONSOLE
-//            payload_
-//                .writeStream
-//                .outputMode("append")
-//                .format("console")
-//                .option("truncate", value = false)
-//                .start
-//                .awaitTermination()
-//        }
+//            //
+//            //        // todo PRINT THE VALUE TO THE CONSOLE
+            payload_
+                .writeStream
+                .outputMode("append")
+                .format("console")
+                .option("truncate", value = false)
+                .start
+                .awaitTermination()
+        }
         
         spark.close()
         spark.stop()
