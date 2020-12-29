@@ -1,289 +1,318 @@
 <CofiResults>
-  <ExecutionTime>20201103153839</ExecutionTime>
-  <FilterClass>SRU-FRB</FilterClass>
-  <InputData format="FTFRAUD" id="qzq1s4052hkgfd1a"><ns2:FrdReq xmlns:ns2="http://www.dh.com/hif6/20091030">
-    <HeaderSegment xmlns="http://www.dh.com/hif6/20091030">
-        <Version>6</Version>
-        <SequenceNb>1</SequenceNb>
-    </HeaderSegment>
-    <PaymentSegment xmlns="http://www.dh.com/hif6/20091030">
-        <Service>GFX</Service>
-        <Template>wally_swift</Template>
-        <ExtRef>CN-0001</ExtRef>
-        <PmtMethod>
-            <Mop>INTL</Mop>
-            <MsgType>103</MsgType>
-            <ProdCode>CTR</ProdCode>
-        </PmtMethod>
-        <ValueDate>20161228</ValueDate>
-        <PaymentAmount>
-            <Currency>GBP</Currency>
-            <Amount>1.0200</Amount>
-        </PaymentAmount>
-        <InstructedAmount>
-            <Currency>USD</Currency>
-            <Amount>1.58</Amount>
-        </InstructedAmount>
-        <SenderBank>
-            <BankName>zdaffaf</BankName>
-            <BankId>PTSACHBP</BankId>
-        </SenderBank>
-        <ReceiverBank>
-            <BankName>zdaffaf</BankName>
-            <BankId>BBPACH22</BankId>
-        </ReceiverBank>
-        <Reference>20163630000300</Reference>
-        <DebitAccount>
-            <Office>001</Office>
-            <AccType>DDA</AccType>
-            <AccNb>123.456.789</AccNb>
-        </DebitAccount>
-        <TranCode>BANK</TranCode>
-        <ChargesInfo>
-            <ChargesCode>SHA</ChargesCode>
-        </ChargesInfo>
-        <Org>
-            <IdCode>AC</IdCode>
-            <Id>123456789</Id>
-            <Nm>dsfdsf</Nm>
-            <AdrLine>sdfsdf</AdrLine>
-            <AdrLine>sdfsdf</AdrLine>
-            <CountryCode>IT</CountryCode>
-        </Org>
-        <Bnf>
-            <IdCode>AC</IdCode>
-            <Id>123456789</Id>
-            <Nm>Blah Bank</Nm>
-            <AdrLine>Santa Clara</AdrLine>
-            <AdrLine>Cuba</AdrLine>
-            <CountryCode>US</CountryCode>
-        </Bnf>
-        <SenderCorr>
-            <IdCode>AC</IdCode>
-            <Id>123456789</Id>
-            <Nm>dfgdfg</Nm>
-            <AdrLine>222 Test street</AdrLine>
-        </SenderCorr>
-        <ReceiverCorr>
-            <IdCode>AC</IdCode>
-            <Id>123456789</Id>
-            <Nm>Receiver Corr Name</Nm>
-            <AdrLine>333 Test Street</AdrLine>
-        </ReceiverCorr>
-        <Cdt>ZYSAGBF0</Cdt>
-        <Fx>
-            <ExchRate>1.550000</ExchRate>
-        </Fx>
-    </PaymentSegment>
-    <FraudRequestSegment xmlns="http://www.dh.com/hif6/20091030">
-        <UniqueId>TESTFRB068</UniqueId>
-        <ScanInd>0</ScanInd>
-        <Direction>O</Direction>
-    </FraudRequestSegment>
-</ns2:FrdReq>
-</InputData>
-  <FilterData>
-    <Entity id="0" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/ReceiverCorr/Id" type="33783808">123456789</Field>
-      <Field id="1" path="simplePath://FrdReq/PaymentSegment/ReceiverCorr/Nm" type="3">Receiver Corr Name</Field>
-      <Field id="2" path="simplePath://FrdReq/PaymentSegment/ReceiverCorr/AdrLine" type="2016">333 Test Street</Field>
-    </Entity>
-    <Entity id="1" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/Org/AdrLine[1]" type="2019">sdfsdf</Field>
-      <Field id="1" path="simplePath://FrdReq/PaymentSegment/Org/AdrLine[2]" type="2019">sdfsdf</Field>
-      <Field id="2" path="simplePath://FrdReq/PaymentSegment/Org/Nm" type="3">dsfdsf</Field>
-      <Field id="3" path="simplePath://FrdReq/PaymentSegment/Org/Id" type="33783808">123456789</Field>
-      <Field id="4" path="simplePath://FrdReq/PaymentSegment/Org/CountryCode" type="256">IT</Field>
-    </Entity>
-    <Entity id="2" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/SenderCorr/AdrLine" type="2016">222 Test street</Field>
-      <Field id="1" path="simplePath://FrdReq/PaymentSegment/SenderCorr/Nm" type="3">dfgdfg</Field>
-      <Field id="2" path="simplePath://FrdReq/PaymentSegment/SenderCorr/Id" type="33783808">123456789</Field>
-    </Entity>
-    <Entity id="3" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/ReceiverBank/BankName" type="3">zdaffaf</Field>
-      <Field id="1" path="simplePath://FrdReq/PaymentSegment/ReceiverBank/BankId" type="131072">BBPACH22</Field>
-    </Entity>
-    <Entity id="4" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm" type="0">Blah Bank</Field>
-      <Field id="1" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="0">Santa Clara</Field>
-      <Field id="2" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[2]" type="2019">Cuba</Field>
-      <Field id="3" path="simplePath://FrdReq/PaymentSegment/Bnf/CountryCode" type="256">US</Field>
-      <Field id="4" path="simplePath://FrdReq/PaymentSegment/Bnf/Id" type="33783808">123456789</Field>
-      <Field id="5" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm;simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="2019">Blah Bank Santa Clara</Field>
-    </Entity>
-    <Entity id="5" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/SenderBank/BankId" type="131072">PTSACHBP</Field>
-      <Field id="1" path="simplePath://FrdReq/PaymentSegment/SenderBank/BankName" type="3">zdaffaf</Field>
-    </Entity>
-    <Entity id="6" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/DebitAccount/AccNb" type="33554432">123.456.789</Field>
-    </Entity>
-    <Entity id="7" extraction="filter">
-      <Field id="0" path="simplePath://FrdReq/PaymentSegment/Cdt" type="131072">ZYSAGBF0</Field>
-    </Entity>
-  </FilterData>
-  <Hit entityId="4" id="1">
-    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
-    <CheckName>Check 1</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>80.0</Threshold>
-    <Score>127.5</Score>
-    <Matches>
-      <Field invalid="false" score="1.11" explanation="1.0 * 1.11 * 1.0 * 1.0 = 1.11" type="1" path="*[3]/text()" text="SANTA CLARA">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
-        <Pattern invalid="true" filterFieldId="5" from="15" to="21"></Pattern>
-        <Pattern invalid="false" filterFieldId="1" from="6" to="11"></Pattern>
-      </Field>
-      <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65" type="128" path="*[11]/text()" text="SANTA CLARA">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="true" filterFieldId="1" from="0" to="5"></Pattern>
-        <Pattern invalid="true" filterFieldId="5" from="15" to="21"></Pattern>
-        <Pattern invalid="true" filterFieldId="1" from="6" to="11"></Pattern>
-      </Field>
-      <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="256" path="*[12]/text()" text="CUBA">
-        <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  SANTA  CLARA  : 66.6 = 60.0 * 1.11 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-COUNTRY :  CUBA  : 30.9 = 30.0 * 1.03 * 1.0^0
-TOTAL : 127.5</Explanation>
-    <State state="" user="Filter" date="20201103153839"></State>
-  </Hit>
-  <Hit entityId="4" id="2">
-    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
-    <CheckName>Check 1</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>80.0</Threshold>
-    <Score>111.1</Score>
-    <Matches>
-      <Field invalid="false" score="0.8372" explanation="0.805 * 1.04 * 1.0 * 1.0 = 0.8372" type="1" path="*[3]/text()" text="SANTA FE">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
-      </Field>
-      <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65" type="128" path="*[11]/text()" text="SANTA FE">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="true" filterFieldId="1" from="0" to="5"></Pattern>
-      </Field>
-      <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="256" path="*[12]/text()" text="CUBA">
-        <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  SANTA  FE  : 50.232 = 60.0 * 0.8372 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-COUNTRY :  CUBA  : 30.9 = 30.0 * 1.03 * 1.0^0
-TOTAL : 111.131996</Explanation>
-    <State state="IRRELEVANT" user="srujana_D@NOTT" date="20201124135313"></State>
-  </Hit>
-  <Hit entityId="4" id="3">
-    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
-    <CheckName>Check 1</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>80.0</Threshold>
-    <Score>91.8</Score>
-    <Matches>
-      <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="1" path="*[3]/text()" text="CUBA">
-        <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-      <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65" type="256" path="*[11]/text()" text="CUBA">
-        <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-      <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65" type="1" path="*[19]/text()" text="CUBAN">
-        <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  CUBA  : 61.8 = 60.0 * 1.03 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-TOTAL : 91.8</Explanation>
-    <State state="RELEVANT" user="srujana_D@NOTT" date="20201124135318"></State>
-  </Hit>
-  <Hit entityId="4" id="4">
-    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
-    <CheckName>Check 1</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>80.0</Threshold>
-    <Score>83.8</Score>
-    <Matches>
-      <Field invalid="false" score="0.8971429" explanation="1.0 * 0.8971429 * 1.0 * 1.0 = 0.8971429" type="1" path="*[3]/text()" text="SANIA">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  SANIA  : 53.828575 = 60.0 * 0.8971429 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-TOTAL : 83.828575</Explanation>
-    <State state="TO_BE_CHECKED" user="srujana_D@NOTT" date="20201124135321"></State>
-  </Hit>
-  <Hit entityId="4" id="5">
-    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
-    <CheckName>Check 1</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>80.0</Threshold>
-    <Score>81.7</Score>
-    <Matches>
-      <Field invalid="false" score="0.8633333" explanation="1.0 * 0.8633333 * 1.0 * 1.0 = 0.8633333" type="1" path="*[3]/text()" text="SANA">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  SANA  : 51.799995 = 60.0 * 0.8633333 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-TOTAL : 81.799995</Explanation>
-    <State state="" user="Filter" date="20201103153839"></State>
-  </Hit>
-  <Hit entityId="4" id="6">
-    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
-    <CheckName>Check 1</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>80.0</Threshold>
-    <Score>81.7</Score>
-    <Matches>
-      <Field invalid="false" score="0.8633333" explanation="1.0 * 0.8633333 * 1.0 * 1.0 = 0.8633333" type="1073741825" path="*[13]/text()" text="SANA">
-        <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
-        <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  SANA  : 51.799995 = 60.0 * 0.8633333 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-TOTAL : 81.799995</Explanation>
-    <State state="" user="Filter" date="20201103153839"></State>
-  </Hit>
-  <Hit entityId="4" id="7">
-    <ListId type="BLACK" format="BLACK_FIELD" version="LATEST">SRU_FRB_BLK</ListId>
-    <CheckName>Check 2</CheckName>
-    <CheckDescription></CheckDescription>
-    <Algorithm>Pattern Matcher</Algorithm>
-    <Channel>SRU-FRB</Channel>
-    <Threshold>82.0</Threshold>
-    <Score>91.8</Score>
-    <Matches>
-      <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="1" path="*[2]/*[2]/*[1]/text()" text="Cuba">
-        <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-      <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65" type="256" path="*[2]/*[4]/text()" text="Cuba">
-        <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
-      </Field>
-    </Matches>
-    <Explanation>NAME :  CUBA  : 61.8 = 60.0 * 1.03 * 1.0^0
-FIRST_NAME : NULL_WEIGHT : 30
-TOTAL : 91.8</Explanation>
-    <State state="" user="Filter" date="20201103153839"></State>
-  </Hit>
-  <State state="ComplianceSuspect" user="Filter" date="20201103153839"></State>
-  <State state="manually_released" user="srujana_D@NOTT" date="20201124135425">Release: No relation to listed company
-test </State>
+    <ExecutionTime>20201103153839</ExecutionTime>
+    <FilterClass>SRU-FRB</FilterClass>
+    <InputData format="FTFRAUD" id="qzq1s4052hkgfd1a">
+        <ns2:FrdReq xmlns:ns2="http://www.dh.com/hif6/20091030">
+            <HeaderSegment xmlns="http://www.dh.com/hif6/20091030">
+                <Version>6</Version>
+                <SequenceNb>1</SequenceNb>
+            </HeaderSegment>
+            <PaymentSegment xmlns="http://www.dh.com/hif6/20091030">
+                <Service>GFX</Service>
+                <Template>wally_swift</Template>
+                <ExtRef>CN-0001</ExtRef>
+                <PmtMethod>
+                    <Mop>INTL</Mop>
+                    <MsgType>103</MsgType>
+                    <ProdCode>CTR</ProdCode>
+                </PmtMethod>
+                <ValueDate>20161228</ValueDate>
+                <PaymentAmount>
+                    <Currency>GBP</Currency>
+                    <Amount>1.0200</Amount>
+                </PaymentAmount>
+                <InstructedAmount>
+                    <Currency>USD</Currency>
+                    <Amount>1.58</Amount>
+                </InstructedAmount>
+                <SenderBank>
+                    <BankName>zdaffaf</BankName>
+                    <BankId>PTSACHBP</BankId>
+                </SenderBank>
+                <ReceiverBank>
+                    <BankName>zdaffaf</BankName>
+                    <BankId>BBPACH22</BankId>
+                </ReceiverBank>
+                <Reference>20163630000300</Reference>
+                <DebitAccount>
+                    <Office>001</Office>
+                    <AccType>DDA</AccType>
+                    <AccNb>123.456.789</AccNb>
+                </DebitAccount>
+                <TranCode>BANK</TranCode>
+                <ChargesInfo>
+                    <ChargesCode>SHA</ChargesCode>
+                </ChargesInfo>
+                <Org>
+                    <IdCode>AC</IdCode>
+                    <Id>123456789</Id>
+                    <Nm>dsfdsf</Nm>
+                    <AdrLine>sdfsdf</AdrLine>
+                    <AdrLine>sdfsdf</AdrLine>
+                    <CountryCode>IT</CountryCode>
+                </Org>
+                <Bnf>
+                    <IdCode>AC</IdCode>
+                    <Id>123456789</Id>
+                    <Nm>Blah Bank</Nm>
+                    <AdrLine>Santa Clara</AdrLine>
+                    <AdrLine>Cuba</AdrLine>
+                    <CountryCode>US</CountryCode>
+                </Bnf>
+                <SenderCorr>
+                    <IdCode>AC</IdCode>
+                    <Id>123456789</Id>
+                    <Nm>dfgdfg</Nm>
+                    <AdrLine>222 Test street</AdrLine>
+                </SenderCorr>
+                <ReceiverCorr>
+                    <IdCode>AC</IdCode>
+                    <Id>123456789</Id>
+                    <Nm>Receiver Corr Name</Nm>
+                    <AdrLine>333 Test Street</AdrLine>
+                </ReceiverCorr>
+                <Cdt>ZYSAGBF0</Cdt>
+                <Fx>
+                    <ExchRate>1.550000</ExchRate>
+                </Fx>
+            </PaymentSegment>
+            <FraudRequestSegment xmlns="http://www.dh.com/hif6/20091030">
+                <UniqueId>TESTFRB068</UniqueId>
+                <ScanInd>0</ScanInd>
+                <Direction>O</Direction>
+            </FraudRequestSegment>
+        </ns2:FrdReq>
+    </InputData>
+    <FilterData>
+        <Entity id="0" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/ReceiverCorr/Id" type="33783808">123456789</Field>
+            <Field id="1" path="simplePath://FrdReq/PaymentSegment/ReceiverCorr/Nm" type="3">Receiver Corr Name</Field>
+            <Field id="2" path="simplePath://FrdReq/PaymentSegment/ReceiverCorr/AdrLine" type="2016">333 Test Street
+            </Field>
+        </Entity>
+        <Entity id="1" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/Org/AdrLine[1]" type="2019">sdfsdf</Field>
+            <Field id="1" path="simplePath://FrdReq/PaymentSegment/Org/AdrLine[2]" type="2019">sdfsdf</Field>
+            <Field id="2" path="simplePath://FrdReq/PaymentSegment/Org/Nm" type="3">dsfdsf</Field>
+            <Field id="3" path="simplePath://FrdReq/PaymentSegment/Org/Id" type="33783808">123456789</Field>
+            <Field id="4" path="simplePath://FrdReq/PaymentSegment/Org/CountryCode" type="256">IT</Field>
+        </Entity>
+        <Entity id="2" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/SenderCorr/AdrLine" type="2016">222 Test street
+            </Field>
+            <Field id="1" path="simplePath://FrdReq/PaymentSegment/SenderCorr/Nm" type="3">dfgdfg</Field>
+            <Field id="2" path="simplePath://FrdReq/PaymentSegment/SenderCorr/Id" type="33783808">123456789</Field>
+        </Entity>
+        <Entity id="3" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/ReceiverBank/BankName" type="3">zdaffaf</Field>
+            <Field id="1" path="simplePath://FrdReq/PaymentSegment/ReceiverBank/BankId" type="131072">BBPACH22</Field>
+        </Entity>
+        <Entity id="4" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm" type="0">Blah Bank</Field>
+            <Field id="1" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="0">Santa Clara</Field>
+            <Field id="2" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[2]" type="2019">Cuba</Field>
+            <Field id="3" path="simplePath://FrdReq/PaymentSegment/Bnf/CountryCode" type="256">US</Field>
+            <Field id="4" path="simplePath://FrdReq/PaymentSegment/Bnf/Id" type="33783808">123456789</Field>
+            <Field id="5"
+                   path="simplePath://FrdReq/PaymentSegment/Bnf/Nm;simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]"
+                   type="2019">Blah Bank Santa Clara
+            </Field>
+        </Entity>
+        <Entity id="5" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/SenderBank/BankId" type="131072">PTSACHBP</Field>
+            <Field id="1" path="simplePath://FrdReq/PaymentSegment/SenderBank/BankName" type="3">zdaffaf</Field>
+        </Entity>
+        <Entity id="6" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/DebitAccount/AccNb" type="33554432">123.456.789
+            </Field>
+        </Entity>
+        <Entity id="7" extraction="filter">
+            <Field id="0" path="simplePath://FrdReq/PaymentSegment/Cdt" type="131072">ZYSAGBF0</Field>
+        </Entity>
+    </FilterData>
+    <Hit entityId="4" id="1">
+        <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+        <CheckName>Check 1</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>80.0</Threshold>
+        <Score>127.5</Score>
+        <Matches>
+            <Field invalid="false" score="1.11" explanation="1.0 * 1.11 * 1.0 * 1.0 = 1.11" type="1" path="*[3]/text()"
+                   text="SANTA CLARA">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
+                <Pattern invalid="true" filterFieldId="5" from="15" to="21"></Pattern>
+                <Pattern invalid="false" filterFieldId="1" from="6" to="11"></Pattern>
+            </Field>
+            <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+                   type="128" path="*[11]/text()" text="SANTA CLARA">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="true" filterFieldId="1" from="0" to="5"></Pattern>
+                <Pattern invalid="true" filterFieldId="5" from="15" to="21"></Pattern>
+                <Pattern invalid="true" filterFieldId="1" from="6" to="11"></Pattern>
+            </Field>
+            <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="256"
+                   path="*[12]/text()" text="CUBA">
+                <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : SANTA CLARA : 66.6 = 60.0 * 1.11 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            COUNTRY : CUBA : 30.9 = 30.0 * 1.03 * 1.0^0
+            TOTAL : 127.5
+        </Explanation>
+        <State state="" user="Filter" date="20201103153839"></State>
+    </Hit>
+    <Hit entityId="4" id="2">
+        <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+        <CheckName>Check 1</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>80.0</Threshold>
+        <Score>111.1</Score>
+        <Matches>
+            <Field invalid="false" score="0.8372" explanation="0.805 * 1.04 * 1.0 * 1.0 = 0.8372" type="1"
+                   path="*[3]/text()" text="SANTA FE">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
+            </Field>
+            <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+                   type="128" path="*[11]/text()" text="SANTA FE">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="true" filterFieldId="1" from="0" to="5"></Pattern>
+            </Field>
+            <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="256"
+                   path="*[12]/text()" text="CUBA">
+                <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : SANTA FE : 50.232 = 60.0 * 0.8372 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            COUNTRY : CUBA : 30.9 = 30.0 * 1.03 * 1.0^0
+            TOTAL : 111.131996
+        </Explanation>
+        <State state="IRRELEVANT" user="srujana_D@NOTT" date="20201124135313"></State>
+    </Hit>
+    <Hit entityId="4" id="3">
+        <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+        <CheckName>Check 1</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>80.0</Threshold>
+        <Score>91.8</Score>
+        <Matches>
+            <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="1" path="*[3]/text()"
+                   text="CUBA">
+                <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+            <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+                   type="256" path="*[11]/text()" text="CUBA">
+                <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+            <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+                   type="1" path="*[19]/text()" text="CUBAN">
+                <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : CUBA : 61.8 = 60.0 * 1.03 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            TOTAL : 91.8
+        </Explanation>
+        <State state="RELEVANT" user="srujana_D@NOTT" date="20201124135318"></State>
+    </Hit>
+    <Hit entityId="4" id="4">
+        <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+        <CheckName>Check 1</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>80.0</Threshold>
+        <Score>83.8</Score>
+        <Matches>
+            <Field invalid="false" score="0.8971429" explanation="1.0 * 0.8971429 * 1.0 * 1.0 = 0.8971429" type="1"
+                   path="*[3]/text()" text="SANIA">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : SANIA : 53.828575 = 60.0 * 0.8971429 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            TOTAL : 83.828575
+        </Explanation>
+        <State state="TO_BE_CHECKED" user="srujana_D@NOTT" date="20201124135321"></State>
+    </Hit>
+    <Hit entityId="4" id="5">
+        <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+        <CheckName>Check 1</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>80.0</Threshold>
+        <Score>81.7</Score>
+        <Matches>
+            <Field invalid="false" score="0.8633333" explanation="1.0 * 0.8633333 * 1.0 * 1.0 = 0.8633333" type="1"
+                   path="*[3]/text()" text="SANA">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : SANA : 51.799995 = 60.0 * 0.8633333 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            TOTAL : 81.799995
+        </Explanation>
+        <State state="" user="Filter" date="20201103153839"></State>
+    </Hit>
+    <Hit entityId="4" id="6">
+        <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+        <CheckName>Check 1</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>80.0</Threshold>
+        <Score>81.7</Score>
+        <Matches>
+            <Field invalid="false" score="0.8633333" explanation="1.0 * 0.8633333 * 1.0 * 1.0 = 0.8633333"
+                   type="1073741825" path="*[13]/text()" text="SANA">
+                <Pattern invalid="true" filterFieldId="5" from="9" to="15"></Pattern>
+                <Pattern invalid="false" filterFieldId="1" from="0" to="5"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : SANA : 51.799995 = 60.0 * 0.8633333 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            TOTAL : 81.799995
+        </Explanation>
+        <State state="" user="Filter" date="20201103153839"></State>
+    </Hit>
+    <Hit entityId="4" id="7">
+        <ListId type="BLACK" format="BLACK_FIELD" version="LATEST">SRU_FRB_BLK</ListId>
+        <CheckName>Check 2</CheckName>
+        <CheckDescription></CheckDescription>
+        <Algorithm>Pattern Matcher</Algorithm>
+        <Channel>SRU-FRB</Channel>
+        <Threshold>82.0</Threshold>
+        <Score>91.8</Score>
+        <Matches>
+            <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="1"
+                   path="*[2]/*[2]/*[1]/text()" text="Cuba">
+                <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+            <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+                   type="256" path="*[2]/*[4]/text()" text="Cuba">
+                <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
+            </Field>
+        </Matches>
+        <Explanation>NAME : CUBA : 61.8 = 60.0 * 1.03 * 1.0^0
+            FIRST_NAME : NULL_WEIGHT : 30
+            TOTAL : 91.8
+        </Explanation>
+        <State state="" user="Filter" date="20201103153839"></State>
+    </Hit>
+    <State state="ComplianceSuspect" user="Filter" date="20201103153839"></State>
+    <State state="manually_released" user="srujana_D@NOTT" date="20201124135425">Release: No relation to listed company
+        test
+    </State>
 </CofiResults>

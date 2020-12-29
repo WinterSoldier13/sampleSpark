@@ -1,18 +1,8 @@
- <PmtMethod>
-        <Mop>INTL</Mop>
-        <MsgType>103</MsgType>
-        <ProdCode>CTR</ProdCode>
-        <Hello></Hello>
- </PmtMethod>
-
-
-
-<!--
-{
-   "PmtMethod": {
-      "Mop": "INTL",
-      "MsgType": "103",
-      "ProdCode": "CTR"
-   }
-}
--->
+<Entity id="4" extraction="filter">
+    <Field id="0" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm" type="0">Blah Bank</Field>
+    <Field id="1" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="0">Santa Clara</Field>
+    <Field id="2" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[2]" type="2019">Cuba</Field>
+    <Field id="3" path="simplePath://FrdReq/PaymentSegment/Bnf/CountryCode" type="256">US</Field>
+    <Field id="4" path="simplePath://FrdReq/PaymentSegment/Bnf/Id" type="33783808">123456789</Field>
+    <Field id="5" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm;simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="2019">Blah Bank Santa Clara</Field>
+</Entity>
