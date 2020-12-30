@@ -1,8 +1,28 @@
-<Entity id="4" extraction="filter">
-    <Field id="0" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm" type="0">Blah Bank</Field>
-    <Field id="1" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="0">Santa Clara</Field>
-    <Field id="2" path="simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[2]" type="2019">Cuba</Field>
-    <Field id="3" path="simplePath://FrdReq/PaymentSegment/Bnf/CountryCode" type="256">US</Field>
-    <Field id="4" path="simplePath://FrdReq/PaymentSegment/Bnf/Id" type="33783808">123456789</Field>
-    <Field id="5" path="simplePath://FrdReq/PaymentSegment/Bnf/Nm;simplePath://FrdReq/PaymentSegment/Bnf/AdrLine[1]" type="2019">Blah Bank Santa Clara</Field>
-</Entity>
+<Hit entityId="4" id="3">
+    <ListId type="BLACK" format="ACCUITY" version="20201030132731">SRU_FRB_ACCUITY</ListId>
+    <CheckName>Check 1</CheckName>
+    <CheckDescription></CheckDescription>
+    <Algorithm>Pattern Matcher</Algorithm>
+    <Channel>SRU-FRB</Channel>
+    <Threshold>80.0</Threshold>
+    <Score>91.8</Score>
+    <Matches>
+        <Field invalid="false" score="1.03" explanation="1.0 * 1.03 * 1.0 * 1.0 = 1.03" type="1" path="*[3]/text()"
+               text="CUBA">
+            <Pattern invalid="false" filterFieldId="2" from="0" to="4"></Pattern>
+        </Field>
+        <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+               type="256" path="*[11]/text()" text="CUBA">
+            <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
+        </Field>
+        <Field invalid="true" score="0.0" explanation="Invalid because of Missing Pattern Thresh: 0.0 &lt; 0.65"
+               type="1" path="*[19]/text()" text="CUBAN">
+            <Pattern invalid="true" filterFieldId="2" from="0" to="4"></Pattern>
+        </Field>
+    </Matches>
+    <Explanation>NAME : CUBA : 61.8 = 60.0 * 1.03 * 1.0^0
+        FIRST_NAME : NULL_WEIGHT : 30
+        TOTAL : 91.8
+    </Explanation>
+    <State state="RELEVANT" user="srujana_D@NOTT" date="20201124135318"></State>
+</Hit>

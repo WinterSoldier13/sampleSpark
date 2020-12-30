@@ -26,6 +26,7 @@ libraryDependencies ++= Seq(
 //Bahir
 //libraryDependencies += "org.apache.bahir" %% "spark-sql-streaming-mqtt" % "2.3.2"
 libraryDependencies += "org.apache.bahir" %% "bahir-spark-distribution" % "2.4.0"
+//libraryDependencies += "org.apache.bahir" %% "bahir-spark-distribution" % "2.4.0"
 
 //Hadoop
 //libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "3.0.2"
@@ -39,6 +40,9 @@ libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.7.2"
 //libraryDependencies += "com.databricks" %% "spark-xml" % "0.11.0"
 //dependencyOverrides += "com.google.guava" % "guava" % "15.0"
 libraryDependencies += "com.databricks" %% "spark-xml" % "0.11.0"
+
+
+libraryDependencies += "org.apache.activemq" % "activemq-all" % "5.16.0"
 
 //XML to JSON
 //libraryDependencies += "org.json" % "json" % "20201115"
